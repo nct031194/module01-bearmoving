@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="docReady()" style="background-image: url('https://24.media.tumblr.com/31b3ae21e954683cf0f05f3b48a8e018/tumblr_n32iepRnwp1rsgy1go1_500.gif');">
+    <img src="https://i.postimg.cc/Zn0RrwG1/Otto-Jump.gif" style="position: relative;left: 0;top: 0;" id="minion" width="250px">
+
+    <script>
+    function upArrowPressed() {
+        let element = document.getElementById("minion");
+        element.style.top = parseInt(element.style.top) - 10 + 'px';
+        
+}
+    function downArrowPressed() {
+        let element = document.getElementById("minion");
+        element.style.top = parseInt(element.style.top) + 10 + 'px';
+    
+}
+    function rightArrowPressed() {
+        let element = document.getElementById("minion");
+        element.style.left = parseInt(element.style.left) + 10 + 'px';
+}
+    function leftArrowPressed() {
+        let element = document.getElementById("minion");
+        element.style.left = parseInt(element.style.left) - 10 + 'px';
+}   
+function moveSelection(evt){
+    switch (evt.keyCode) {
+        case 37:
+            leftArrowPressed();
+            break;
+        case 39:
+            rightArrowPressed();
+            break;
+        case 40:
+            downArrowPressed();
+            break;
+        case 38:
+            upArrowPressed();
+            break;
+    }
+}
+function docReady(){
+    window.addEventListener('keydown', moveSelection );
+}
+    </script>
+</body>
+</html>
